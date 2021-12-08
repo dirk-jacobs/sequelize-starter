@@ -1,1 +1,1 @@
-# sequelize-starter
+# Final Project Starter
