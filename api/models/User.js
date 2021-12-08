@@ -1,7 +1,8 @@
 const { Sequelize } = require("sequelize");
 const sequelize = require("../db/db.js");
 const Nationality = require("./nationality.js");
-
+const Language = require("./language.js");
+const UserLanguage = require("./userlanguage.js");
 
 const User = sequelize.define(
     "user",
@@ -34,6 +35,7 @@ const User = sequelize.define(
     },
     {
         tableName: "User",
+        timestamps: false
     }
 );
 
@@ -43,14 +45,30 @@ const User = sequelize.define(
 
 // one to many categories and tags
 
-/* Nationality.hasMany(User, {
+/* 
+Nationality.hasMany(User, {
     as: "nationality-user",
     foreignKey: "category_id",
+});
+ */
+
+/* Language.belongsToMany(User, { 
+    as: "user-language",
+    through: 'UserLanguage'
 });
  */
 User.belongsTo(Nationality, {
     as: "user-nationality",
     foreignKey: "NationalityID",
+});
+
+
+User.belongsToMany(Language, { 
+    as: "Languages",
+    through: 'UserLanguage',
+    uniqueKey: 'UserLanguageID',
+    foreignKey: 'UserID',
+    otherKey: 'LanguageID'
 });
 
 module.exports = User;

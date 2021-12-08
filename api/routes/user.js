@@ -1,6 +1,7 @@
 const express = require("express");
 const Nationality = require("../models/nationality");
 const User = require("../models/User");
+const Language = require("../models/Language");
 
 // initialize express
 const app = express();
@@ -31,11 +32,24 @@ app.get("/users/:id", async (req, res) => {
   }
 });
 
-// Get all users
-app.get("/users-detail", async (req, res) => {
+// Get all users (Large)
+app.get("/users-L", async (req, res) => {
   try {
     const users = await User.findAll({
       include: { model: Nationality, as: 'user-nationality' }
+    });
+    res.status(200).send(users);
+  } catch (err) {
+    console.error(err);
+    res.status(400).send("Unable to fetch users");
+  }
+});
+
+// Get all users (ExtraLarge)
+app.get("/users-XL", async (req, res) => {
+  try {
+    const users = await User.findAll({
+      include: { model: Language, as: 'Languages' }
     });
     res.status(200).send(users);
   } catch (err) {

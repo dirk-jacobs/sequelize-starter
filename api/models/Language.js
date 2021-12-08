@@ -1,25 +1,25 @@
 const { Sequelize } = require("sequelize");
 const sequelize = require("../db/db.js");
 
-const Nationality = sequelize.define(
-    "Nationality",
+const Language = sequelize.define(
+    "Language",
     {
-        NationalityID: {
+        LanguageID: {
             type: Sequelize.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
-        Country: {
+        Language: {
             type: Sequelize.STRING(50),
             allowNull: false,
         }
     },
     {
-        tableName: "Nationality",
+        tableName: "Language",
         timestamps: false
     }
 );
 
 
-module.exports = Nationality;
+module.exports = Language;
