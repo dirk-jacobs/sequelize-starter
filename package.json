@@ -14,22 +14,25 @@
     "lint:js": "eslint --max-warnings=0 --ext=.js --format=codeframe --fix",
     "lint": "npm run lint:js",
     "format": "prettier --write ./",
-    "db": "node api/scripts/createDb.js && node api/scripts/sync && node api/scripts/createNationality.js && node api/scripts/createUser.js && node api/scripts/createLanguage.js  && node api/scripts/createUserLanguage.js"
-
+    "db": "node api/scripts/createDb.js && node api/scripts/sync && node api/scripts/createNationality.js && node api/scripts/createUser.js && node api/scripts/createLanguage.js  && node api/scripts/createUserLanguage.js",
+    "cdb": "node api/scripts/createDb.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "objectid": "^3.2.1",
-    "tv4": "^1.3.0",
-    "vite": "^2.5.10",
-    "dotenv": "^8.2.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "pg-tools": "^0.1.0",
+    "pgtools": "^0.3.2",
     "sequelize": "^6.11.0",
-    "mysql2": "^2.3.3"
+    "tv4": "^1.3.0",
+    "vite": "^2.5.10"
   },
   "devDependencies": {
     "dependency-cruiser": "^10.0.6",

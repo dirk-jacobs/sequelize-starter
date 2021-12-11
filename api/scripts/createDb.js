@@ -1,18 +1,28 @@
-const mysql = require('mysql2/promise');
-const { Sequelize } = require('sequelize');
+const pgtools = require("pgtools");
 const { DB_HOST, DB_NAME, DB_USER, DB_PASSWORD } = require('../config.js');
 
 
 const createDb = async () => {
-    console.log('HOST');
     const host = DB_HOST;
-    const port = 3306;
+    const port = 5432; // MySQL: 3306
     const user = DB_USER;
     const password = DB_PASSWORD;
 
     // create db if it doesn't already exist
-    const connection = await mysql.createConnection({ host, port, user, password });
-    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${DB_NAME}\`;`);
+    const config = {
+    user: "postgres",
+    host: host,
+    password: password,
+    port: 5432
+  };
+  console.log("Creating DB");
+  try {
+    result = await pgtools.createdb(config, DB_NAME);
+    console.log("Result",result);
+  } catch(error) {
+    console.log("error",error)
+  }
+  
 }
 
 createDb().then(() => {
