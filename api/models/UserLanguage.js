@@ -1,26 +1,24 @@
-const { Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
 const sequelize = require("../db/db.js");
-const User = require("./user.js");
-const Language = require("./language.js");
 
 const UserLanguage = sequelize.define(
     "UserLanguage",
     {   UserLanguageID: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
         UserID: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         LanguageID: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         Level: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: true
         }
     },

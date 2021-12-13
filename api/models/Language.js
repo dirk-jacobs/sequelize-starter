@@ -1,17 +1,17 @@
-const { Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
 const sequelize = require("../db/db.js");
 
 const Language = sequelize.define(
     "Language",
     {
         LanguageID: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
         },
         Language: {
-            type: Sequelize.STRING(50),
+            type: DataTypes.STRING(50),
             allowNull: false,
         }
     },

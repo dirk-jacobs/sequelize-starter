@@ -1,35 +1,34 @@
-const { Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
 const sequelize = require("../db/db.js");
 const Nationality = require("./nationality.js");
 const Language = require("./language.js");
-const UserLanguage = require("./userlanguage.js");
 
 const User = sequelize.define(
     "user",
     {
         UserID: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true,
         },
         FirstName: {
-            type: Sequelize.STRING(50),
+            type: DataTypes.STRING(50),
             allowNull: false,
         },
         LastName: {
-            type: Sequelize.STRING(50),
+            type: DataTypes.STRING(50),
             allowNull: false,
         },
         Email: {
-            type: Sequelize.STRING(50),
+            type: DataTypes.STRING(50),
             unique: true,
             validate: {
                 isEmail: true,
             },
         },
         NationalityID: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: true,
         }
     },
