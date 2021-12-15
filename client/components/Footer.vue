@@ -9,6 +9,7 @@ export default {
   name: 'Footer'
 }
 </script>
+
 <style scoped>
   .footer {
     background: bisque;
