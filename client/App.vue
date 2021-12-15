@@ -1,22 +1,22 @@
 <template>
   <div class="app-container">
     <Header />
-    <HelloWorld msg="Hello Vue 3.0 + Vite" />
+    <Home msg="Hello Vue 3.0 + Vite" />
     <Footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import Home from './components/Home/Home.vue'
+import Header from './components/Shared/Header.vue'
+import Footer from './components/Shared/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
-    HelloWorld
+    Home
   }
 }
 </script>
