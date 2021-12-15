@@ -4,7 +4,6 @@ const sequelize = require("../db/db.js");
 const User = require("../models/user");
 const Nationality = require("../models/nationality");
 const Language = require("../models/language");
-const UserLanguage = require("../models/userlanguage");
 
 // create tables
 const createTables = async () => {

@@ -2,6 +2,7 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../db/db.js");
 const Nationality = require("./nationality.js");
 const Language = require("./language.js");
+const UserLanguage = require("./UserLanguage.js");
 
 const User = sequelize.define(
     "user",
@@ -64,7 +65,7 @@ User.belongsTo(Nationality, {
 
 User.belongsToMany(Language, { 
     as: "Languages",
-    through: 'UserLanguage',
+    through: UserLanguage,
     uniqueKey: 'UserLanguageID',
     foreignKey: 'UserID',
     otherKey: 'LanguageID'
