@@ -1,7 +1,9 @@
 <template>
-  <Header />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
-  <Footer />
+  <div class="app-container">
+    <Header />
+    <HelloWorld msg="Hello Vue 3.0 + Vite" />
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -18,3 +20,19 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+
+  .app-container {
+    height: 100vh; /* for shorter content */
+    display: flex;
+    flex-direction: column;
+  }
+</style>
