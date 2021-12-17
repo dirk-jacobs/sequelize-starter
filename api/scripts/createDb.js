@@ -1,5 +1,5 @@
 const pgtools = require("pgtools");
-const { DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD } = require('../config.js');
+const { DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD } = require('../env-config.js');
 
 
 const createDb = async () => {
