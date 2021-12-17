@@ -31,7 +31,8 @@
     "pgtools": "^0.3.2",
     "sequelize": "^6.11.0",
     "tv4": "^1.3.0",
-    "vue": "^3.2.26"
+    "vue": "^3.2.26",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "dependency-cruiser": "^10.0.6",
