@@ -15,7 +15,16 @@ const app = Vue.createApp({
     <button v-on:click="message += ' row'">Add</button>
   </div>
   `
-}).mount('#app');
+}).mount('#page2');
 
 
+/* app.component('hello', {
+  props: ['to'],
+  // "<h1>Hello, WORLD</h1>"
+  template: '<h1>Hello, {{toUpper}}</h1>',
+  setup: function(props) {
+    return { toUpper: props.to.toUpperCase() };
+  }
+});
+ */
 export default app;
