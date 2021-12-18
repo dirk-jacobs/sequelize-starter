@@ -1,20 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { createApp } from 'vue'
 
-import App from './App.vue'
-import Home from './pages/home/Home.vue'
-import Members from './pages/members/Members.vue'
+const TodoItem = {
+  template: `<li>This is a todo</li>`
+}
+
+const app = Vue.createApp({
+  components: {
+    TodoItem // Register a new component
+  },
+  data: () => ({ message: 'Row' }),
+  template: `
+  <div>
+    <todo-item></todo-item>
+    <h1>{{message}} your ship</h1>
+    <button v-on:click="message += ' row'">Add</button>
+  </div>
+  `
+}).mount('#app');
 
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/', component: Home },
-    { path: '/members', component: Members },
-    { path: '/bar', component: Home },
-  ],
-})
-
-const app = createApp(App)
-app.use(router)
-window.vm = app.mount('#app')
+export default app;
