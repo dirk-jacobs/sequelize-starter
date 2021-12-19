@@ -29,6 +29,9 @@ if (config.MODE === 'development') {
   app.use(morgan('dev'));
 }
 
+console.log('config',config.STATIC_DIR)
+app.use("/", express.static(path.join(__dirname, "..", config.STATIC_DIR)));
+
 app.get('/', (req, res) => {
   res.send('API! go to `/api`');
 });
