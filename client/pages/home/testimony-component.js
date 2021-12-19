@@ -1,5 +1,8 @@
 const TestimonyComponent = {
-    template: `<div class="testimony">Testimony
+    props: ['testimony'],
+    template: `<div class="testimony">
+        <div>{{testimony.avatar}}</div>
+        <div>{{testimony.content}}</div>
     </div>`
 }
 
