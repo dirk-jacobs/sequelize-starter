@@ -1,9 +1,15 @@
+import BannerSection from './banner-section.js';
+import TestimonySection from './testimony-section.js';
+
 const MainSection = {
-  data: () => ({ message: 'Home Main' }),
+  components: {
+    BannerSection,
+    TestimonySection
+  },
   template: `
   <div class="main">
-    <h1>{{message}}</h1>
-    <button v-on:click="message += ' row'">Add</button>
+  <banner-section></banner-section>
+  <testimony-section></testimony-section>
   </div>
   `
 }
