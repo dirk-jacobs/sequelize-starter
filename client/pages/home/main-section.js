@@ -1,15 +1,15 @@
 import BannerSection from './banner-section.js';
-import TestimonySection from './testimony-section.js';
+import TestimonialSection from './testimonial-section.js';
 
 const MainSection = {
   components: {
     BannerSection,
-    TestimonySection
+    TestimonialSection
   },
   template: `
   <div class="main">
   <banner-section></banner-section>
-  <testimony-section></testimony-section>
+  <testimonial-section></testimonial-section>
   </div>
   `
 }
