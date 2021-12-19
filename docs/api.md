@@ -41,7 +41,7 @@
   - [createUserLanguage.js](#apiscriptscreateUserLanguagejs)
   - [sync.js](#apiscriptssyncjs)
 - utils
-- [config.js](#apiconfigjs)
+- [env-config.js](#apienv-configjs)
 - [index.js](#apiindexjs)
 
 ---
@@ -168,7 +168,7 @@
 
 ---
 
-<details><summary><a href="../../api/config.js" id="apiconfigjs">../api/config.js</a></summary>
+<details><summary><a href="../../api/env-config.js" id="apienv-configjs">../api/env-config.js</a></summary>
 
 </details>
 
